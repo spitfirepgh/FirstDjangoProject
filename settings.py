@@ -1,7 +1,11 @@
 # Django settings for FirstDjangoProject project.
+import os.path
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
+
+# Get absolute path of settings.py directory
+PWD = os.path.dirname(os.path.realpath(__file__ ))
 
 ADMINS = (
     # ('Your Name', 'your_email@domain.com'),
@@ -14,7 +18,7 @@ DATABASES = {
         'ENGINE': 'django.contrib.gis.db.backends.postgis', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
         'NAME': 'geoproject',                      # Or path to database file if using sqlite3.
         'USER': 'postgres',                      # Not used with sqlite3.
-        'PASSWORD': '',                  # Not used with sqlite3.
+        'PASSWORD': 'fishtacos',                  # Not used with sqlite3.
         'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
         'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
     }
@@ -27,7 +31,7 @@ DATABASES = {
 # timezone as the operating system.
 # If running in a Windows environment this must be set to the same as your
 # system time zone.
-TIME_ZONE = 'America/Chicago'
+TIME_ZONE = 'America/New_York'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
@@ -77,7 +81,9 @@ MIDDLEWARE_CLASSES = (
 
 ROOT_URLCONF = 'FirstDjangoProject.urls'
 
-TEMPLATE_DIRS = ('/home/smr314/PycharmProjects/FirstDjangoProject/templates',)
+TEMPLATE_DIRS = (
+    os.path.join(PWD, 'templates')
+)
 
 INSTALLED_APPS = (
     'django.contrib.auth',

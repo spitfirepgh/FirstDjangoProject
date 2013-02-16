@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <title></title>
+</head>
+<body>
+<h2>Snow Zones</h2>
+<ul>
+{% for sz in snow_zones %}
+    <li>{{ sz.name }}</li>
+{% endfor %}
+</ul>
+<h2>Broken Meters</h2>
+<ul>
+    {% for b in broken_meter %}
+        <li>{{ b.name }}</li>
+    {% endfor %}
+</ul>
+</body>
+</html>
